@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.curve .curvesvg,
+.curve .background {
+  position: fixed;
+  height: calc(100vh + 600px);
+  width: 100vw;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+.curve .background {
+  background-color: black;
+  transition: opacity 0s linear 0.1s;
+}
+.curve .route {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  color: white;
+  font-size: 46px;
+  z-index: 150;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.burgerButton {
+  @apply fixed top-0 right-0 w-16 h-16 rounded-full flex items-center justify-center;
+}
+.burgerButton .burger {
+  @apply w-full;
+}
+.burgerButton .burger::after,
+.burgerButton .burger::before {
+  content: "";
+  @apply block w-6 bg-white h-[1px] m-auto relative duration-300 ease-out;
+}
+.burgerButton .burger::after {
+  top: -4px;
+}
+.burgerButton .burger::before {
+  top: 4px;
+}
+.burgerButton .burgerActive::after {
+  top: 0;
+  transform: rotate(45deg);
+}
+.burgerButton .burgerActive::before {
+  top: 1px;
+  transform: rotate(-45deg);
+}
+.btn-sidebar ::after {
+  content: "";
+  @apply w-2 h-2 bg-white absolute left-0 rounded-full mt-5 ml-7 scale-0 duration-300;
+}
+.btn-sidebar:hover ::after {
+  @apply scale-100;
+}
+.btn-navbar ::after {
+  content: "";
+  @apply w-1 h-1 bg-black absolute -bottom-3 left-[40%] rounded-full scale-0 duration-300;
+}
+.btn-navbar-c ::after {
+  content: "";
+  @apply w-1 h-1 bg-white absolute -bottom-3 left-[40%] rounded-full scale-0 duration-300;
+}
+.btn-navbar:hover ::after {
+  @apply scale-100;
+}
+.btn-navbar-c:hover ::after {
+  @apply scale-100;
+}
+.circle {
+  height: 1550%;
+  width: 100%;
+  left: 0;
+  border-radius: 0 0 50% 50%;
+  background-color: white;
+  z-index: 1;
+  position: absolute;
+  box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
+}
